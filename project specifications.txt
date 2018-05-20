@@ -1,0 +1,13 @@
+user:
+*we need fields like first name, last name, age, ethnicity, parent's marital status,
+ text field for essay
+*a page that shows their own information
+*maybe upload a picture
+*maybe sms login
+
+
+admin:
+*needs to see all users
+*needs to see the user's fields when they click on user's name
+*download a file that contains the user's information
+
