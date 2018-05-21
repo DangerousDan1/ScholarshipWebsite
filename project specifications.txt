@@ -31,6 +31,12 @@ ADMIN:
 *needs to see all the scholarships the user wants to apply to
 
 
+HELPFUL GITHUBS:
+https://github.com/Dnguye1393/PerceptionCheck
+https://github.com/choufun/CMPS-183-Web-Application (idk how helpful this will be because its kinda empty but look
+							through)
+
+
 
 
 
