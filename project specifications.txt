@@ -1,13 +1,36 @@
-user:
-*we need fields like first name, last name, age, ethnicity, parent's marital status,
- text field for essay
-*a page that shows their own information
-*maybe upload a picture
-*maybe sms login
+**we're building the website for one entity that can look through applicants that have
+  applied. We will list the scholarships that they are offering once the applicant logs in
 
+HOME PAGE:
+	-should show welcome page and what the site is about then have sign up and login 
+	 options
+	-sign up as admin...or maybe there should be only one admin account since it's for
+	 one organization so then there's no need to even have the option to sign up as
+	 admin
 
-admin:
+USER:
+*when you sign up:
+	-first name
+	-last name
+	-email
+	-password
+*once you log in:
+	-the applicant will be able to see available scholarships---maybe we can do a 
+	checkbox of the onces that they want to apply to
+	-once they click apply:
+		:we need fields like first name, last name, age, ethnicity, parent's marital status,
+		text field for essay
+	-a page that shows their own information
+	-upload a picture(MAYBE)
+	-sms login(MAYBE)
+
+ADMIN:
 *needs to see all users
-*needs to see the user's fields when they click on user's name
-*download a file that contains the user's information
+*needs to see the user's information when they click on user's name
+*download a file that contains the user's information(MAYBE)
+*needs to see all the scholarships the user wants to apply to
+
+
+
+
 
