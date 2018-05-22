@@ -31,4 +31,5 @@ ADMIN:
 *needs to see the user's information when they click on user's name(JAMES)
 	-needs to see all the scholarships the user applied to(DANIEL)
 *download a file that contains the user's information(MAYBE)
+*Make Admin a little more sophisticated (sort admin by names, scholaship type, age, sex w/e)
 
