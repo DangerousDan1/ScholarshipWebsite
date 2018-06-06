@@ -33,14 +33,24 @@ def index():
 
 
 def see_users():
-    users = db().select(db.auth_user.ALL)
+    users = db().select(db.checklist.ALL)
     return dict(users=users)
 
 
+def add_scholarship():
+    """Adds a checklist."""
+    form = SQLFORM(db.scholarships)
+    if form.process(onvalidation=None).accepted:
+        session.flash = T("Checklist added.")
+        redirect(URL('default','index'))
+    elif form.errors:
+        session.flash = T('Please correct the info')
+    return dict(form=form)
+
 
 def no_swearing(form):
-    if 'fool' in form.vars.memo:
-        form.errors.memo = T('No swearing please')
+    if 'fool' in form.vars.race:
+        form.errors.race = T('No swearing please')
 
 def add():
     """Adds a checklist."""

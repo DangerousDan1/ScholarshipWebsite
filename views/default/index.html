@@ -17,11 +17,11 @@
         </a>
       </div>
     </div>
-    <h3>To add a scholarship, click on the button below.</h3>
+    <h3>To establish a scholarship, click on the button below.</h3>
     <div class="button_list">
       <div class="buttons">
-        <a class="btn rounded" href="{{=URL('default', 'see_users')}}">
-        Add scholarship
+        <a class="btn rounded" href="{{=URL('default', 'add_scholarship')}}">
+        Establish scholarship
         </a>
       </div>
     </div>
@@ -29,16 +29,16 @@
 
     {{else:}}
   <div class="add_btn">
-    <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add</a>
+    <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
   </div>
-  <h2> Your Private Memos </h2>
+  <h2> Available Scholarships </h2>
   {{for cl in checklists:}}
     {{if cl.is_public is False:}}
 
       <div class="memo">
         <div class="memo_text">
-          <div class="memo_title">{{=cl.title}}</div>
-          <div class="memo_content">{{=cl.memo}}</div>
+          <div class="memo_title">Phone: {{=cl.phone}} </div>
+          <div class="memo_content">GPA: {{=cl.gpa}}</div>
         </div>
         <div>
           <div class="button_list">
