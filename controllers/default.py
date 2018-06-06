@@ -26,8 +26,15 @@ def index():
     elif auth.user is None:
         publiclists = db(db.checklist.is_public == True).select()
         return dict(publiclists=publiclists)
+    if auth.user.email == "scholarship@admin.com":
+        users = db().select(db.auth_user.ALL)
+        return dict(users=users)
     # return dict(checklists=checklists + publiclists=publiclists)
 
+
+def see_users():
+    users = db().select(db.auth_user.ALL)
+    return dict(users=users)
 
 
 

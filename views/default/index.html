@@ -8,7 +8,25 @@
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
     {{if auth.user.email == "scholarship@admin.com":}}
-    <h1>This is the admin site </h1>
+    <h1>Welcome to the administrator page for scholarships. </h1>
+    <h3>To see a list of the applicants, click on the button below.</h3>
+    <div class="button_list">
+      <div class="buttons">
+        <a class="btn rounded" href="{{=URL('default', 'see_users')}}">
+        View applicants
+        </a>
+      </div>
+    </div>
+    <h3>To add a scholarship, click on the button below.</h3>
+    <div class="button_list">
+      <div class="buttons">
+        <a class="btn rounded" href="{{=URL('default', 'see_users')}}">
+        Add scholarship
+        </a>
+      </div>
+    </div>
+
+
     {{else:}}
   <div class="add_btn">
     <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add</a>
