@@ -7,7 +7,9 @@
 
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
-
+    {{if auth.user.email == "scholarship@admin.com":}}
+    <h1>This is the admin site </h1>
+    {{else:}}
   <div class="add_btn">
     <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add</a>
   </div>
@@ -37,7 +39,7 @@
           </div>
         </div>
       </div>
-
+      {{pass}}
     {{pass}}
 
   {{pass}}
