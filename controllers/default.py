@@ -18,30 +18,33 @@ def index():
     return auth.wiki()
     """
     logger.info('The session is: %r' % session)
-    checklists = None
+    user_infos = None
     if auth.user is not None:
-        # checklists = db(db.checklist.user_email == auth.user.email).select()
-        checklists = db((db.checklist.user_email == auth.user.email)|(db.checklist.is_public == "True")).select(db.checklist.ALL)
-        return dict(checklists=checklists)
+        # user_infos = db(db.user_info.user_email == auth.user.email).select()
+        user_infos = db((db.user_info.user_email == auth.user.email)|(db.user_info.is_public == "True")).select(db.user_info.ALL)
+        return dict(user_infos=user_infos)
     elif auth.user is None:
-        publiclists = db(db.checklist.is_public == True).select()
+        publiclists = db(db.user_info.is_public == True).select()
         return dict(publiclists=publiclists)
+
     if auth.user.email == "scholarship@admin.com":
         users = db().select(db.auth_user.ALL)
         return dict(users=users)
-    # return dict(checklists=checklists + publiclists=publiclists)
+    # return dict(user_infos=user_infos + publiclists=publiclists)
 
 
 def see_users():
-    users = db().select(db.checklist.ALL)
-    return dict(users=users)
+    # users = db().select(db.auth_user.ALL)
+    user_info = db().select(db.user_info.ALL)
+    scholarships = db().select(db.scholarships.ALL)
+    return dict(user_info=user_info)
 
 
 def add_scholarship():
-    """Adds a checklist."""
+    """Adds a user_info."""
     form = SQLFORM(db.scholarships)
     if form.process(onvalidation=None).accepted:
-        session.flash = T("Checklist added.")
+        session.flash = T("user_info added.")
         redirect(URL('default','index'))
     elif form.errors:
         session.flash = T('Please correct the info')
@@ -51,12 +54,16 @@ def add_scholarship():
 def no_swearing(form):
     if 'fool' in form.vars.race:
         form.errors.race = T('No swearing please')
+    elif form.vars.gpa > 5:
+        form.errors.gpa = T('Please enter a valid GPA')
+    elif form.vars.phone > 9999999999 or form.vars.phone < 1000000000:
+        form.errors.phone = T('Please enter a valid Phone Number')
 
 def add():
-    """Adds a checklist."""
-    form = SQLFORM(db.checklist)
+    """Adds a user_info."""
+    form = SQLFORM(db.user_info)
     if form.process(onvalidation=no_swearing).accepted:
-        session.flash = T("Checklist added.")
+        session.flash = T("user_info added.")
         redirect(URL('default','index'))
     elif form.errors:
         session.flash = T('Please correct the info')
@@ -66,15 +73,15 @@ def add():
 @auth.requires_signature()
 def delete():
     if request.args(0) is not None:
-        q = ((db.checklist.user_email == auth.user.email) &
-             (db.checklist.id == request.args(0)))
+        q = ((db.user_info.user_email == auth.user.email) &
+             (db.user_info.id == request.args(0)))
         db(q).delete()
     redirect(URL('default', 'index'))
 
 def toggle_public():
     if request.args(0) is not None:
-        q = ((db.checklist.user_email == auth.user.email) &
-            (db.checklist.id == request.args(0)))
+        q = ((db.user_info.user_email == auth.user.email) &
+            (db.user_info.id == request.args(0)))
         cl = db(q).select().first()
         if cl.is_public is False:
             cl.update_record(is_public = True)
@@ -85,7 +92,7 @@ def toggle_public():
 @auth.requires_login()
 def edit():
     """
-    - "/edit/3" it offers a form to edit a checklist.
+    - "/edit/3" it offers a form to edit a user_info.
     'edit' is the controller (this function)
     '3' is request.args[0]
     """
@@ -93,20 +100,20 @@ def edit():
         # We send you back to the general index.
         redirect(URL('default', 'index'))
     else:
-        q = ((db.checklist.user_email == auth.user.email) &
-             (db.checklist.id == request.args(0)))
+        q = ((db.user_info.user_email == auth.user.email) &
+             (db.user_info.id == request.args(0)))
         # I fish out the first element of the query, if there is one, otherwise None.
         cl = db(q).select().first()
         if cl is None:
             session.flash = T('Not Authorized')
             redirect(URL('default', 'index'))
         # Always write invariants in your code.
-        # Here, the invariant is that the checklist is known to exist.
+        # Here, the invariant is that the user_info is known to exist.
         # Is this an edit form?
-        form = SQLFORM(db.checklist, record=cl, deletable=False)
+        form = SQLFORM(db.user_info, record=cl, deletable=False)
         if form.process(onvalidation=no_swearing).accepted:
             # At this point, the record has already been edited.
-            session.flash = T('Checklist edited.')
+            session.flash = T('user_info edited.')
             redirect(URL('default', 'index'))
         elif form.errors:
             session.flash = T('Please enter correct values.')
