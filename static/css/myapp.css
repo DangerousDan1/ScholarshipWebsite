@@ -28,6 +28,8 @@ div.memo div.memo_title {
   font-weight: bold;
   font-size: 150%;
 }
+
+
 /* line 25, ../sass/_main.scss */
 div.memo div.button_list {
   text-align: right;
@@ -41,7 +43,9 @@ div.memo div.button_list div.buttons {
 div.memo div.button_list a.btn {
   padding: 10px;
 }
-
+div.header{
+  width: 1000px;
+}
 .disabled{
 background-color:#7a7b7c !important;
 color:white;

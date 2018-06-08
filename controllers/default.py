@@ -7,7 +7,15 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
+from bottle import get, route, run, template, view, static_file
 
+@route('/images/<filename:re:.*\.jpg>')
+def serve_image(filename):
+    return static_file(filename, root='images', mimetype='image/jpg')
+
+@route('/images/<filename:re:.*\.png>')
+def serve_image(filename):
+    return static_file(filename, root='images', mimetype='image/png')
 
 def index():
     """

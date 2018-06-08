@@ -29,7 +29,7 @@ response.google_analytics_id = None
 # ----------------------------------------------------------------------------------------------------------------------
 
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    (T('Daughters of Penelope Foundation'), False, URL('default', 'index'), [])
 ]
 
 DEVELOPMENT_MENU = True
