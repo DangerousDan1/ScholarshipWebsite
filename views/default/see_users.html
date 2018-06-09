@@ -33,15 +33,7 @@
       <th>Number of Family Members</th>
       <th>Race/Ethnicity</th>
     </tr>
-    <!-- {{#for user in users:}}
-    <tr>
-      <td>{{#=user.first_name}}</td>
-      <td>{{#=user.last_name}}</td>
-      <td>{{#=user.email}}</td>
-      <td>{{#=user2.gpa}}</td>
-    </tr>
-    {{#pass}} -->
-    {{for user_i in user_info:}}
+      {{for user_i in user_info:}}
     <tr>
 
       <td>{{=user_i.first_name}}</td>
@@ -52,10 +44,5 @@
       <td>{{=user_i.family_members}}</td>
       <td>{{=user_i.race}}</td>
     </tr>
-
-
-
     {{pass}}
-
-
   </table>

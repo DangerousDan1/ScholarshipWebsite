@@ -19,7 +19,7 @@ def get_last_name():
 db.define_table('user_info',
                 Field('user_email', default=get_user_email()),
                 Field('first_name', default=get_first_name()),
-                Field('last_name', default=get_last_name()),                
+                Field('last_name', default=get_last_name()),
                 Field('phone', 'double'),
                 Field('gpa','double'),
                 Field('income','double'),
@@ -30,14 +30,14 @@ db.define_table('user_info',
                 )
 
 db.define_table('scholarships',
-                Field('user_email', default=get_user_email()),
+                # Field('user_email'),
                 Field('scholarship_name'),
                 Field('information', 'text'),
                 Field('scholarship_url'),
                 Field('contact_name'),
-                Field('contact_email'),
-                Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
-                Field('is_public', 'boolean', default=False)
+                Field('contact_email')
+                # Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
+                # Field('is_public', 'boolean', default=False)
                 )
 db.user_info.user_email.writable = False
 db.user_info.user_email.readable = False
