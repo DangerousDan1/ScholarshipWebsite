@@ -52,7 +52,9 @@ color:white;
 cursor: default;
 pointer-events: none;
 }
-
+img.mySlides{
+  width: 500px;
+}
 .disabled-icon{
 opacity:.5
 }

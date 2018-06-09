@@ -30,7 +30,8 @@ def index():
     if auth.user is not None:
         # user_infos = db(db.user_info.user_email == auth.user.email).select()
         user_infos = db((db.user_info.user_email == auth.user.email)|(db.user_info.is_public == "True")).select(db.user_info.ALL)
-        return dict(user_infos=user_infos)
+        scholarships = db().select(db.scholarships.ALL)
+        return dict(user_infos=user_infos, scholarships = scholarships)
     elif auth.user is None:
         publiclists = db(db.user_info.is_public == True).select()
         return dict(publiclists=publiclists)
@@ -52,7 +53,7 @@ def add_scholarship():
     """Adds a user_info."""
     form = SQLFORM(db.scholarships)
     if form.process(onvalidation=None).accepted:
-        session.flash = T("user_info added.")
+        session.flash = T("scholarship added.")
         redirect(URL('default','index'))
     elif form.errors:
         session.flash = T('Please correct the info')
@@ -71,7 +72,7 @@ def add():
     """Adds a user_info."""
     form = SQLFORM(db.user_info)
     if form.process(onvalidation=no_swearing).accepted:
-        session.flash = T("user_info added.")
+        session.flash = T("Information added.")
         redirect(URL('default','index'))
     elif form.errors:
         session.flash = T('Please correct the info')
@@ -121,7 +122,7 @@ def edit():
         form = SQLFORM(db.user_info, record=cl, deletable=False)
         if form.process(onvalidation=no_swearing).accepted:
             # At this point, the record has already been edited.
-            session.flash = T('user_info edited.')
+            session.flash = T('Information edited.')
             redirect(URL('default', 'index'))
         elif form.errors:
             session.flash = T('Please enter correct values.')

@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 
-{{block head}}
-{{end}}
+{{#block head}}
+{{#end}}
 
 <div class="main_content">
 
@@ -31,33 +31,31 @@
   <div class="add_btn">
     <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
   </div>
-  <h2> Available Scholarships<br>Need to fix this to show scholarships. </h2>
-  {{for cl in user_infos:}}
-    {{if cl.is_public is False:}}
+  <h2> Available Scholarships<br></h2>
+  <table class = "center fill">
+    <tr>
+      <th>Scholarship Name</th>
+      <th>Description</th>
+      <th>Contact Name</th>
+      <th>Email</th>
+      <th>URL</th>
 
-      <div class="memo">
-        <div class="memo_text">
-          <div class="memo_title">Phone: {{=cl.phone}} </div>
-          <div class="memo_content">GPA: {{=cl.gpa}}</div>
-        </div>
-        <div>
-          <div class="button_list">
-            <div class="buttons">
-              <a class="btn rounded" href="{{=URL('default', 'edit', args=[cl.id])}}">
-                <i class="fa fa-edit fa-lg"></i>
-              </a>
-              <!-- <a class="btn rounded red" href="{{=URL('default', 'delete', args=[cl.id], user_signature=True)}}">
-                <i class="fa fa-trash fa-lg"></i>
-              </a>
-              <a class="btn rounded red" href="{{=URL('default', 'toggle_public', args=[cl.id], user_signature=True)}}">
-                <i class="fa fa-user"></i>
-              </a> -->
+    </tr>
+  {{for sl in scholarships:}}
+    <tr>
 
-              </div>
-          </div>
-        </div>
-      </div>
-      {{pass}}
+      <td>{{=sl.scholarship_name}}</td>
+      <td>{{=sl.information}}</td>
+      <td>{{=sl.contact_name}}</td>
+      <td>{{=sl.contact_email}}</td>
+    </tr>
+
+  </table>
+
+
+
+</div>
+
     {{pass}}
 
   {{pass}}

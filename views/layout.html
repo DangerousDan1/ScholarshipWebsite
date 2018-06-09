@@ -11,7 +11,7 @@
     <link href="{{=URL('static','css/calendar.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{=URL('static','css/web2py.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{{=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{#=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}"> -->
     {{include "web2py_ajax.html"}}
     <style>
       .mySlides {display:none;}
@@ -38,9 +38,9 @@
     </div>
   </div>
 </div>
-<div class="container max900">
+<!-- <div class="container max900">
 
-</div>
+</div> -->
     </header>
     <!-- <header class="teal padded">
       <div class="container middle max900">
@@ -48,10 +48,10 @@
           <label class="ham padded fa fa-bars" for="menu"></label>
           <div class="burger accordion">
             <input type="checkbox" id="menu"/>
-            {{=MENU(response.menu,_class='menu')}}
+            {{#=MENU(response.menu,_class='menu')}}
             <ul class="menu right">
               <li>
-                {{=auth.navbar(mode='dropdown')}}
+                {{#=auth.navbar(mode='dropdown')}}
               </li>
             </ul>
           </div>
@@ -101,7 +101,7 @@
   </body>
   <script src="{{=URL('static','js/marked.min.js')}}"></script>
   <script src="{{=URL('static','js/vue.min.js')}}"></script>
-  {{block bottomjs}}{{end}}
+  {{#block bottomjs}}{{#end}}
   <script>
     jQuery('.social a').each(function(){var t=jQuery(this); t.attr('href',t.attr('href').replace('{url}',encodeURIComponent(window.location.href)));});
   </script>
