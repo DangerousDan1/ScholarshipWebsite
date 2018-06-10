@@ -29,6 +29,9 @@ div.memo div.memo_title {
   font-size: 150%;
 }
 
+div.home-images{
+  background: black;
+}
 
 /* line 25, ../sass/_main.scss */
 div.memo div.button_list {

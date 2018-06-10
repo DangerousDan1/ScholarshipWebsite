@@ -26,7 +26,9 @@ db.define_table('user_info',
                 Field('family_members','integer'),
                 Field('race','string'),
                 Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
-                Field('is_public', 'boolean', default=False)
+                Field('is_public', 'boolean', default=False),
+                Field('pdf','upload',uploadfolder=request.folder+'static/pdfs')
+
                 )
 
 db.define_table('scholarships',

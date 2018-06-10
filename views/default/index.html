@@ -4,7 +4,6 @@
 {{#end}}
 
 <div class="main_content">
-
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
     {{if auth.user.email == "scholarship@admin.com":}}
@@ -25,39 +24,30 @@
         </a>
       </div>
     </div>
-
-
     {{else:}}
   <div class="add_btn">
     <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
   </div>
   <h2> Available Scholarships<br></h2>
-  <table class = "center fill">
+  <table class = "center">
     <tr>
       <th>Scholarship Name</th>
       <th>Description</th>
       <th>Contact Name</th>
       <th>Email</th>
       <th>URL</th>
-
     </tr>
   {{for sl in scholarships:}}
     <tr>
-
       <td>{{=sl.scholarship_name}}</td>
       <td>{{=sl.information}}</td>
       <td>{{=sl.contact_name}}</td>
       <td>{{=sl.contact_email}}</td>
+      <td>{{=sl.scholarship_url}}</td>
     </tr>
-
-  </table>
-
-
-
-</div>
-
     {{pass}}
-
+  </table>
+</div>
   {{pass}}
 
   {{elif auth.user is None:}}
@@ -68,10 +58,28 @@
 
     <div class="login_button">
         <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+
     </div>
-    
-
-
+    <div class ="home-images" style="max-width:965px">
+      <img class="mySlides" alt="Philanthropy" src="../static/images/Penelope.jpg" style="width:100%"/>
+      <img class="mySlides" alt="Education" src="../static/images/Scholarship.jpg" style="width:100%"/>
+      <img class="mySlides" alt="Literacy" src="../static/images/BookClub-1.jpg" style="width:100%"/>
+   </div>
+    <script>
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 4000); // Change image every 2 seconds
+      }
+    </script>
   {{pass}}
 
 </div>
