@@ -3,7 +3,7 @@
 {{#block head}}
 {{#end}}
 
-<div class="main_content">
+<div class="user_space three wide column">
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
     {{if auth.user.email == "scholarship@admin.com":}}
@@ -11,7 +11,7 @@
     <h3>To see a list of the applicants, click on the button below.</h3>
     <div class="button_list">
       <div class="buttons">
-        <a class="btn rounded" href="{{=URL('default', 'see_users')}}">
+        <a class="ui basic button" href="{{=URL('default', 'see_users')}}">
         View applicants
         </a>
       </div>
@@ -19,14 +19,14 @@
     <h3>To establish a scholarship, click on the button below.</h3>
     <div class="button_list">
       <div class="buttons">
-        <a class="btn rounded" href="{{=URL('default', 'add_scholarship')}}">
+        <a class="ui basic button" href="{{=URL('default', 'add_scholarship')}}">
         Establish scholarship
         </a>
       </div>
     </div>
     {{else:}}
   <div class="add_btn">
-    <a class="btn red rounded" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
+    <a class="ui basic button" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
   </div>
   <h2> Available Scholarships<br></h2>
   <table class = "center">

@@ -40,8 +40,8 @@ header, main, footer {display:block; with:100%} /* IE fix */
 }
 
 /*** buttons ***/
-.btn, button, [type=button], [type=submit] {padding:0.5em 1em; margin:0 0.5em 0.5em 0; display:inline-block; background-color:#26a69a; color:white}
-.btn:hover, button:hover, [type=button]:hover, [type=submit]:hover {box-shadow:0 0 10px #666; text-decoration:none; cursor:pointer}
+/* .btn, button, [type=button], [type=submit] {padding:0.5em 1em; margin:0 0.5em 0.5em 0; display:inline-block; background-color:#26a69a; color:white} */
+/* .btn:hover, button:hover, [type=button]:hover, [type=submit]:hover {box-shadow:0 0 10px #666; text-decoration:none; cursor:pointer} */
 .btn.small, table .btn {padding:0.25em 0.5em; font-size:0.8em}
 .btn.large {padding:1em 2em; font-size:1.2em}
 .oval {border-radius:50%}
@@ -96,7 +96,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
   .twothirds {width:66.66%; margin-right:-13.33px}
   label.quarter:not(.compressible).right, label.half:not(.compressible).right, label.threequarters:not(.compressible).right   {float:left; text-align:left}
 }
-@media all and (max-width:599px) {  
+@media all and (max-width:599px) {
   .quarter:not(.compressible), .half:not(.compressible), .third:not(.compressible), .twothirds:not(.compressible), .threequarters:not(.compressible) {width:100%;}
   label.quarter:not(.compressible).right, label.half:not(.compressible).right, label.threequarters:not(.compressible).right,
   label.third:not(.compressible).right, label.twothirds:not(.compressible).right   {float:left; text-align:left}
@@ -195,7 +195,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
 .menu.dark>li>ul>li:first-child:before{border-bottom-color:#111111}
 
 @media all and (max-width:599px) {
-  header .menu li, header .menu ul {width: 100%}  
+  header .menu li, header .menu ul {width: 100%}
   header .menu.right {float:left; text-align:left}
   header .menu ul ul {top:2.5em; left:-1px}
 }
@@ -214,7 +214,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
     left:0;
     top:0;
     height:100vh;
-    box-shadow:0 0 10px #666;    
+    box-shadow:0 0 10px #666;
     width:220px;
     padding:0 10px 0 10px;
     margin-left:-210px;
