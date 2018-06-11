@@ -1,4 +1,4 @@
-timestamp: 2018-06-10T13:28:47.520000
+timestamp: 2018-06-10T21:47:48.346000
 CREATE TABLE "web2py_session_ScholarshipWebsite"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "locked" CHAR(1),
@@ -9,7 +9,7 @@ CREATE TABLE "web2py_session_ScholarshipWebsite"(
     "session_data" BLOB
 );
 success!
-timestamp: 2018-06-10T13:28:47.848000
+timestamp: 2018-06-10T21:47:48.458000
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "first_name" CHAR(128),
@@ -21,21 +21,21 @@ CREATE TABLE "auth_user"(
     "registration_id" CHAR(512)
 );
 success!
-timestamp: 2018-06-10T13:28:48.287000
+timestamp: 2018-06-10T21:47:48.519000
 CREATE TABLE "auth_group"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "role" CHAR(512),
     "description" TEXT
 );
 success!
-timestamp: 2018-06-10T13:28:49.010000
+timestamp: 2018-06-10T21:47:48.564000
 CREATE TABLE "auth_membership"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2018-06-10T13:28:49.160000
+timestamp: 2018-06-10T21:47:48.617000
 CREATE TABLE "auth_permission"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
@@ -44,7 +44,7 @@ CREATE TABLE "auth_permission"(
     "record_id" INTEGER
 );
 success!
-timestamp: 2018-06-10T13:28:49.679000
+timestamp: 2018-06-10T21:47:48.660000
 CREATE TABLE "auth_event"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "time_stamp" TIMESTAMP,
@@ -54,7 +54,7 @@ CREATE TABLE "auth_event"(
     "description" TEXT
 );
 success!
-timestamp: 2018-06-10T13:28:49.906000
+timestamp: 2018-06-10T21:47:48.728000
 CREATE TABLE "auth_cas"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
@@ -64,218 +64,34 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
-timestamp: 2018-06-10T13:28:50.010000
+timestamp: 2018-06-10T21:47:48.772000
 CREATE TABLE "user_info"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_email" CHAR(512),
     "first_name" CHAR(512),
     "last_name" CHAR(512),
     "phone" DOUBLE,
+    "date_of_birth" CHAR(512),
+    "address" CHAR(512),
+    "city" CHAR(512),
+    "zip" CHAR(512),
     "gpa" DOUBLE,
     "income" DOUBLE,
     "family_members" INTEGER,
     "race" CHAR(512),
     "updated_on" TIMESTAMP,
     "is_public" CHAR(1),
+    "image" CHAR(512),
     "pdf" CHAR(512)
 );
 success!
-timestamp: 2018-06-10T13:28:50.132000
+timestamp: 2018-06-10T21:47:48.833000
 CREATE TABLE "scholarships"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "scholarship_name" CHAR(512),
     "information" TEXT,
-    "scholarship_url" CHAR(512),
+    "scholarship_amount" DOUBLE,
     "contact_name" CHAR(512),
     "contact_email" CHAR(512)
 );
-success!
-<<<<<<< HEAD
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-timestamp: 2018-06-09T17:55:45.933000
-ALTER TABLE "user_info" ADD "pdf" CHAR(512);
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-=======
->>>>>>> b0cee23e874f4a538b376a52da563d43040ba40e
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-timestamp: 2018-06-10T20:58:44.904000
-ALTER TABLE "scholarships" ADD "scholarship_amount" DOUBLE;
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-timestamp: 2018-06-10T21:14:29.413166
-ALTER TABLE "user_info" ADD "city" CHAR(512);
-timestamp: 2018-06-10T21:14:29.424947
-ALTER TABLE "user_info" ADD "date_of_birth" CHAR(512);
-timestamp: 2018-06-10T21:14:29.426383
-ALTER TABLE "user_info" ADD "zip" CHAR(512);
-timestamp: 2018-06-10T21:14:29.427519
-ALTER TABLE "user_info" ADD "image" CHAR(512);
-timestamp: 2018-06-10T21:14:29.428839
-ALTER TABLE "user_info" ADD "address" CHAR(512);
-success!
 success!

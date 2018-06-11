@@ -56,8 +56,8 @@ db.user_info.is_public.readable = False
 
 db.user_info.date_of_birth.requires = IS_DATE(format=T('%d/%m/%Y'),
                                 error_message='must be DD/MM/YYYY!')
-db.user_info.phone.requires = IS_MATCH('^\d{10}(-\d{9})?$',
-                                error_message='not a valid phone number')
+# db.user_info.phone.requires = IS_MATCH('^1?((-)\d{3}-?|\(\d{3}\))\d{3}-?\d{4}$',
+                                # error_message='not a valid phone number')
 db.user_info.zip.requires = IS_MATCH('^\d{5}(-\d{4})?$',
                                 error_message='not a zip code')
 
