@@ -267,3 +267,15 @@ success!
 success!
 success!
 success!
+timestamp: 2018-06-10T21:14:29.413166
+ALTER TABLE "user_info" ADD "city" CHAR(512);
+timestamp: 2018-06-10T21:14:29.424947
+ALTER TABLE "user_info" ADD "date_of_birth" CHAR(512);
+timestamp: 2018-06-10T21:14:29.426383
+ALTER TABLE "user_info" ADD "zip" CHAR(512);
+timestamp: 2018-06-10T21:14:29.427519
+ALTER TABLE "user_info" ADD "image" CHAR(512);
+timestamp: 2018-06-10T21:14:29.428839
+ALTER TABLE "user_info" ADD "address" CHAR(512);
+success!
+success!

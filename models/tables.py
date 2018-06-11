@@ -21,12 +21,17 @@ db.define_table('user_info',
                 Field('first_name', default=get_first_name()),
                 Field('last_name', default=get_last_name()),
                 Field('phone', 'double'),
+                Field('date_of_birth', dmy=['d', 'm', 'y']),
+                Field('address'),
+                Field('city'),
+                Field('zip'),
                 Field('gpa','double'),
                 Field('income','double'),
                 Field('family_members','integer'),
                 Field('race','string'),
                 Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
                 Field('is_public', 'boolean', default=False),
+                Field('image','upload'),
                 Field('pdf','upload',uploadfolder=request.folder+'static/pdfs')
 
                 )
@@ -47,6 +52,14 @@ db.user_info.updated_on.writable = db.user_info.updated_on.readable = False
 db.user_info.id.writable = db.user_info.id.readable = False
 db.user_info.is_public.writable = False
 db.user_info.is_public.readable = False
+
+
+db.user_info.date_of_birth.requires = IS_DATE(format=T('%d/%m/%Y'),
+                                error_message='must be DD/MM/YYYY!')
+db.user_info.phone.requires = IS_MATCH('^\d{10}(-\d{9})?$',
+                                error_message='not a valid phone number')
+db.user_info.zip.requires = IS_MATCH('^\d{5}(-\d{4})?$',
+                                error_message='not a zip code')
 
 
 # after defining tables, uncomment below to enable auditing
