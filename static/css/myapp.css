@@ -7,7 +7,11 @@
 div.main_content {
   padding: 400px;
 }
-
+div.login_button{
+  margin: auto;
+  width: 300px;
+  align-content: center;
+}
 /* line 9, ../sass/_main.scss */
 div.add_btn {
   margin: 5px;
@@ -28,9 +32,36 @@ div.memo div.memo_title {
   font-weight: bold;
   font-size: 150%;
 }
+div.signup_button{
+  float: right;
+  width: 300px;
+}
+div.page-title{
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 
+div.page-title p{
+  /* background-color: blue; */
+  text-align: center;
+}
+div.about-us{
+  float: left;
+  margin-left: 100px;
+  border: 3px solid green;
+  margin-bottom: 50px;
+}
+div.logo{
+  margin-right:100px ;
+  float: right;
+  width: 300px;
+}
 div.home-images{
-  background: black;
+  /* background: white; */
+  width: 900px;
+  height: 420px;
+  margin: auto;
 }
 div.information div.established-scholarships{
   float: right;
