@@ -7,6 +7,7 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
+import os
 from bottle import get, route, run, template, view, static_file
 
 @route('/images/<filename:re:.*\.jpg>')
@@ -44,7 +45,10 @@ def index():
 
 def see_users():
     # users = db().select(db.auth_user.ALL)
+
+    # row = db(db.product.id == some_id).select().first()
     user_info = db().select(db.user_info.ALL)
+    # user_info = db(db.user_info).select().first()
     scholarships = db().select(db.scholarships.ALL)
     return dict(user_info=user_info)
 
