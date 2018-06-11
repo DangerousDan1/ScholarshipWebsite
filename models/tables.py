@@ -35,7 +35,7 @@ db.define_table('scholarships',
                 # Field('user_email'),
                 Field('scholarship_name'),
                 Field('information', 'text'),
-                # Field('scholarship_url'),
+                Field('scholarship_amount', 'double'),
                 Field('contact_name'),
                 Field('contact_email')
                 # Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
