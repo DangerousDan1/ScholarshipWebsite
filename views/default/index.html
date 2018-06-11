@@ -231,6 +231,10 @@ function sortTable(n) {
           break;
         }
       }
+      if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        shouldSwitch = true;
+        break;
+      }
     }
     if (shouldSwitch) {
       /* If a switch has been marked, make the switch

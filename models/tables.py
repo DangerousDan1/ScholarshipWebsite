@@ -32,7 +32,7 @@ db.define_table('user_info',
                 Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
                 Field('is_public', 'boolean', default=False),
                 Field('image','upload'),
-                Field('pdf','upload',uploadfolder=request.folder+'static/pdfs')
+                Field('pdf','upload')
 
                 )
 
