@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="{{=URL('static','css/stupid.css')}}" rel="stylesheet" type="text/css"/>
+
+  <link href="{{=URL('static','css/web2py.css')}}" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<table class = "center">
+  <tr>
+    <th>Scholarship Name</th>
+    <th>Description</th>
+    <th>Contact Name</th>
+    <th>Email</th>
+    <!-- <th>URL</th> -->
+  </tr>
+{{for sl in scholarships:}}
+  <tr>
+    <td>{{=sl.scholarship_name}}</td>
+    <td>{{=sl.information}}</td>
+    <td>{{=sl.contact_name}}</td>
+    <td>{{=sl.contact_email}}</td>
+    <!-- <td>{{=sl.scholarship_url}}</td> -->
+  </tr>
+  {{pass}}
+</table>

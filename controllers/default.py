@@ -48,6 +48,9 @@ def see_users():
     scholarships = db().select(db.scholarships.ALL)
     return dict(user_info=user_info)
 
+def view_scholarships():
+    scholarships = db().select(db.scholarships.ALL)
+    return dict(scholarships=scholarships)
 
 def add_scholarship():
     """Adds a user_info."""

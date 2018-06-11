@@ -24,6 +24,14 @@
         </a>
       </div>
     </div>
+    <div class = "established-scholarhips">
+    <h3>To view established scholarships, click on the button below.</h3>
+    <div class="buttons">
+      <a class="ui basic button" href="{{=URL('default', 'view_scholarships')}}">
+      View scholarships
+      </a>
+    </div>
+    </div>
     {{else:}}
   <div class="add_btn">
     <a class="ui basic button" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
@@ -35,7 +43,7 @@
       <th>Description</th>
       <th>Contact Name</th>
       <th>Email</th>
-      <th>URL</th>
+      <!-- <th>URL</th> -->
     </tr>
   {{for sl in scholarships:}}
     <tr>
@@ -43,7 +51,7 @@
       <td>{{=sl.information}}</td>
       <td>{{=sl.contact_name}}</td>
       <td>{{=sl.contact_email}}</td>
-      <td>{{=sl.scholarship_url}}</td>
+      <!-- <td>{{=sl.scholarship_url}}</td> -->
     </tr>
     {{pass}}
   </table>
@@ -57,7 +65,7 @@
     <p class="explanation">Sign Up to see which scholarships we offer!</p>
 
     <div class="login_button">
-        <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+        <a href="{{=URL('default', 'user')}}" class="ui basic button">Login</a>
 
     </div>
     <div class ="home-images" style="max-width:965px">
