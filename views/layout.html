@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
 
     {{include "web2py_ajax.html"}}
@@ -31,151 +29,54 @@
       {{=response.flash}}
     </div>
     {{pass}}
-<header class="teal padded stupid-example">
-<!-- <div class="container max900"> -->
-  <div class="fill middle">
-    <!-- <label class="ham fa fa-bars" for="left-menu"></label> -->
-    <!-- <div class="burger accordion"> -->
-      <!-- <input type="checkbox" id="menu">
-      <strong>{{=MENU(response.menu,_class='menu')}}</strong>
-      <ul class="menu right">
-          <li>
-            {{=auth.navbar(mode='dropdown')}}
-          </li>
-      </ul> -->
-    <!-- </div> -->
-  </div>
-<!-- </div> -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="{{=URL('default','index')}}">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <header class="teal padded stupid-example fill center" style="height:75px;padding-top:35px">
+        <!-- <div class="container max900"> -->
+          <div class="fill middle">
+            <!-- <label class="ham fa fa-bars" for="left-menu"></label>
+            <div class="burger accordion">
+              <input type="checkbox" id="menu">
+              <h2>{{=MENU(response.menu,_class='menu')}}</h2>
+              <ul class="menu right">
+                <li>
+                  {{=auth.navbar(mode='dropdown')}}
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        <!-- </div> -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="{{=URL('default','index')}}">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://www.daughtersofpenelope.org/">Sponsor Website <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Options
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{=URL('default', 'user')}}">Log In</a>
-          <a class="dropdown-item" href="{{=URL('default', 'user/register')}}">Sign Up</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{=URL('default', 'user/retrieve_password')}}">Forgot Password</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- <div class="container max900">
-
-</div> -->
-</header>
-    <!-- <header class="teal padded">
-      <div class="container middle max900">
-        <div class="fill middle">
-          <label class="ham padded fa fa-bars" for="menu"></label>
-          <div class="burger accordion">
-            <input type="checkbox" id="menu"/>
-            {{#=MENU(response.menu,_class='menu')}}
-            <ul class="menu right">
-              <li>
-                {{#=auth.navbar(mode='dropdown')}}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="http://www.daughtersofpenelope.org/">Sponsor Website <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Options
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{=URL('default', 'user')}}">Log In</a>
+                  <a class="dropdown-item" href="{{=URL('default', 'user/register')}}">Sign Up</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{=URL('default', 'user/retrieve_password')}}">Forgot Password</a>
+                </div>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-    </header> -->
+        </nav>
+    </header>
+
     <main class="white">
       {{include}}
       {{if auth.user is None:}}
-      <style>
-        .container {
-            position: relative;
-            width: 100%;
-        }
-
-        .image {
-          opacity: 1;
-          display: block;
-          width: 100%;
-          height: auto;
-          transition: .5s ease;
-          backface-visibility: hidden;
-        }
-
-        .middle {
-          transition: .5s ease;
-          opacity: 0;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          text-align: center;
-        }
-
-        .container:hover .image {
-          opacity: 10;
-        }
-
-        .container:hover .middle {
-          opacity: 1;
-        }
-
-        .text {
-          background-color: teal;
-          color: white;
-          font-size: 40px;
-          padding: 32px 64px;
-        }
-      </style>
-      <!-- <div class ="home-images" style="max-width:965px">
-        <img class="mySlides" alt="Philanthropy" src="../static/images/Penelope.jpg" style="width:100%"/>
-        <img class="mySlides" alt="Education" src="../static/images/Scholarship.jpg" style="width:100%"/>
-        <img class="mySlides" alt="Literacy" src="../static/images/BookClub-1.jpg" style="width:100%"/>
-     </div>
-      <script>
-        var myIndex = 0;
-        carousel();
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          myIndex++;
-          if (myIndex > x.length) {myIndex = 1}
-          x[myIndex-1].style.display = "block";
-          setTimeout(carousel, 4000); // Change image every 2 seconds
-        }
-      </script> -->
       {{pass}}
     </main>
 
-    <!-- <footer class="black">
-      <div class="silver center padded social">
-        <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u={url}"></a>
-        <a class="fa fa-twitter" href="https://twitter.com/home?status={url}"></a>
-        <a class="fa fa-google" href="https://plus.google.com/share?url={url}"></a>
-      </div>
-      <div class="container padded max900">
-        <div class="fill">
-          Copyright @ 2016
-        </div>
-      </div>
-    </footer> -->
-    <!-- <footer class="teal">
-    <div class="teal center padded social">
-    </div> -->
-    <!-- <div class="container padded max900">
-    </div> -->
-    </footer>
   </body>
   <script src="{{=URL('static','js/marked.min.js')}}"></script>
   <script src="{{=URL('static','js/vue.min.js')}}"></script>
@@ -183,5 +84,4 @@
   <script>
     jQuery('.social a').each(function(){var t=jQuery(this); t.attr('href',t.attr('href').replace('{url}',encodeURIComponent(window.location.href)));});
   </script>
-
 </html>
