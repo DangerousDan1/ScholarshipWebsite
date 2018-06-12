@@ -10,6 +10,7 @@
     <!-- <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet" type="text/css"/> -->
     <link href="{{=URL('static','css/calendar.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{=URL('static','css/web2py.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <!-- <link rel="stylesheet" href="{{#=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}"> -->
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet"
       type="text/css"/> -->
@@ -29,23 +30,14 @@
       {{=response.flash}}
     </div>
     {{pass}}
-      <header class="teal padded stupid-example fill center" style="height:75px;padding-top:35px">
+      <header class="teal  fill center" style="height:75px;padding-top:5px">
         <!-- <div class="container max900"> -->
-          <div class="fill middle">
-            <!-- <label class="ham fa fa-bars" for="left-menu"></label>
-            <div class="burger accordion">
-              <input type="checkbox" id="menu">
-              <h2>{{=MENU(response.menu,_class='menu')}}</h2>
-              <ul class="menu right">
-                <li>
-                  {{=auth.navbar(mode='dropdown')}}
-                </li>
-              </ul>
-            </div> -->
-          </div>
         <!-- </div> -->
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="{{=URL('default','index')}}">Home</a>
+          <a class="navbar-brand left" href="{{=URL('default','index')}}">
+          <font size="5" color="white"> Home</font>
+
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,11 +45,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="http://www.daughtersofpenelope.org/">Sponsor Website <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="http://www.daughtersofpenelope.org/" style="right: 100px;">
+
+                  <font size="5" color="white" >Sponsor Website</font>
+
+                  <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" style="right: 100px;">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Options
+                    <font size="5" color="white">Options</font>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{=URL('default', 'user')}}">Log In</a>
