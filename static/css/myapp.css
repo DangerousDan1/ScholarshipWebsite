@@ -25,10 +25,14 @@ content {
   min-height: calc(100vh - 70px);
 }
 
-/* footer {
-  height: 50px;
-} */
-
+div.logout{
+  float: right;
+  margin-right: 50px;
+}
+div.top_page{
+  /* margin-left: 270px; */
+  float: right;
+}
 
 body{
   font-family: 'Source Sans Pro', sans-serif;

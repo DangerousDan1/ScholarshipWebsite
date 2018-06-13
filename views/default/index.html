@@ -4,15 +4,22 @@
 
 {{#block head}}
 {{#end}}
+
   <div class="user_space three wide column">
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
     {{if auth.user.email == "scholarship@admin.com":}}
 
-     <h1>Welcome to the administrator page for scholarships. </h1>
-     <br>
+     <h1 style="text-align: center"> Welcome to the administrator page for scholarships. </h1>
 
-    <!--<div class="centerbox">-->
+     <div class="logout">
+
+       <div class="buttons">
+       <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
+       Log Out
+       </a>
+       </div>
+     </div>
     <div style="text-align: left;margin-left:auto">
 
     <div style="text-align:left;2;vertical-align:right; padding: 50px;">
@@ -26,17 +33,14 @@
     </div>
     <br>
 
-
     <h3>To establish a scholarship, click on the button below.</h3>
-    <!--<div class="button_list">-->
+
       <div class="buttons">
         <a class="btn btn-success" href="{{=URL('default', 'add_scholarship')}}">
         Establish scholarship
         </a>
       </div>
     <br>
-    <!--</div>-->
-    <!--</p>-->
 
     <p class="center">
     <div class = "established-scholarhips">
@@ -48,31 +52,18 @@
       <br>
     </div>
     </p>
-
-
-    <p class="center">
-        <h3>To log out, click on the button below.</h3>
-        <div class="buttons">
-        <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
-        Log Out
-        </a>
-        </div>
-        <br>
-    </p>
+      <br>
     </div>
 
-    <!---->
-<!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-
-
   {{else:}}
-
+  <div class = "top_page">
   <div class="add_btn">
-    <a class="btn btn-primary" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
+    <a class="btn btn-primary" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Edit your Information</a>
+    <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
+    Log Out</a>
   </div>
+</div>
+
   <h2> Available Scholarships<br></h2>
   <table class = "center" id="myTable2">
     <tr>
@@ -92,6 +83,7 @@
     </tr>
     {{pass}}
   </table>
+  <!-- source: w3 schools -->
   <script>
   function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -152,19 +144,13 @@
     }
   }
   </script>
-  <h3>To log out, click on the button below.</h3>
-  <div class="buttons">
-    <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
-    Log Out
-    </a>
-  </div>
-</div>
+
   {{pass}}
 
   {{elif auth.user is None:}}
   <div class = "page-title">
-   <h1 class="main_title">Welcome to Greek Orthodox Scholarships!</h1>
-    <p class="explanation">Sign Up to see which scholarships we offer!</p>
+   <h1 style="text-align:center" class="main_title" >Welcome to Greek Orthodox Scholarships!</h1>
+    <p style="text-align:center" class="explanation">Sign Up to see which scholarships we offer!</p>
   </div>
     <div class="login_button center">
         <a href="{{=URL('default', 'user')}}" class="btn btn-danger btn-lg">Login</a>
@@ -278,7 +264,6 @@
       </div>
 
   </div>
- <!--</div>-->
 
  <script>
   var myIndex = 0;
@@ -313,10 +298,8 @@
   }
 </script>
 
-<!-- </div> -->
   <div class="container">
   <div class="half left" style="display:block">
-
 
     <p><h2 class="center"><font size="10" sans-serif> About Us</font></h2></p>
     <p class="center"><font size="3" sans-serif>
@@ -333,7 +316,6 @@
         Daughters of Penelope and serves its members, and the citizen’s where our
         members reside, world-wide.
       </font></p>
-
   </div>
   <div class="half ">
     <img src="../static/images/Logo_aboutus2.jpg" style="width:100%"/>
@@ -345,17 +327,4 @@
 
 </body>
 
-<body>
-<!-- <div class="footer" class="teal" style="height:50px; margin-top: 230px;">
-<footer class="teal" style="height:50px; margin-top: 230px;">
-  <div class="teal center padded social">
-
-  </div>
-  <div class="container padded max900">
-
-  </div>
-</footer>
-
-</div> -->
-</body>
 </html>

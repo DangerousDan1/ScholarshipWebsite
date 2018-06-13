@@ -29,26 +29,19 @@ def index():
     logger.info('The session is: %r' % session)
     user_infos = None
     if auth.user is not None:
-        # user_infos = db(db.user_info.user_email == auth.user.email).select()
         user_infos = db((db.user_info.user_email == auth.user.email)|(db.user_info.is_public == "True")).select(db.user_info.ALL)
         scholarships = db().select(db.scholarships.ALL)
         return dict(user_infos=user_infos, scholarships = scholarships)
     elif auth.user is None:
         publiclists = db(db.user_info.is_public == True).select()
         return dict(publiclists=publiclists)
-
     if auth.user.email == "scholarship@admin.com":
         users = db().select(db.auth_user.ALL)
         return dict(users=users)
-    # return dict(user_infos=user_infos + publiclists=publiclists)
-
 
 def see_users():
-    # users = db().select(db.auth_user.ALL)
 
-    # row = db(db.product.id == some_id).select().first()
     user_info = db().select(db.user_info.ALL)
-    # user_info = db(db.user_info).select().first()
     scholarships = db().select(db.scholarships.ALL)
     return dict(user_info=user_info)
 
