@@ -23,6 +23,9 @@
     <style>
       .mySlides {display:none;}
     </style>
+    <style type="text/css">
+        html, body { margin: 0; padding: 0; height: 100%; width: 100%;}
+    </style>
   </head>
   <body >
     {{if response.flash:}}
@@ -72,7 +75,21 @@
       {{if auth.user is None:}}
       {{pass}}
     </main>
-
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+    <style>
+      .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          fill: #39CCCC;
+          background-color: #39CCCC;
+          color: #39CCCC;
+          text-align: center;
+      }
+    </style>
   </body>
   <script src="{{=URL('static','js/marked.min.js')}}"></script>
   <script src="{{=URL('static','js/vue.min.js')}}"></script>

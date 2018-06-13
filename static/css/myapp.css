@@ -24,9 +24,10 @@ div.add_btn a {
 content {
   min-height: calc(100vh - 70px);
 }
-footer {
+
+/* footer {
   height: 50px;
-}
+} */
 
 
 body{
