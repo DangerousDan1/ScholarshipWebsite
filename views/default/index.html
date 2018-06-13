@@ -1,46 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<table lang="en">
 {{extend 'layout.html'}}
 
 {{#block head}}
 {{#end}}
-
-<div class="user_space three wide column">
+  <div class="user_space three wide column">
   <!-- Here goes your main HTML code. -->
   {{if auth.user is not None:}}
     {{if auth.user.email == "scholarship@admin.com":}}
-    <h1>Welcome to the administrator page for scholarships. </h1>
-    <h3>To see a list of the applicants, click on the button below.</h3>
-    <div class="button_list" >
+
+     <h1>Welcome to the administrator page for scholarships. </h1>
+     <br>
+
+    <!--<div class="centerbox">-->
+    <div style="text-align: left;margin-left:auto">
+
+    <div style="text-align:left;2;vertical-align:right; padding: 50px;">
+        <h3>To see a list of the applicants, click on the button below.</h3>
+    <div class="button_list" allign="center">
       <div class="buttons">
         <a class="btn btn-primary" href="{{=URL('default', 'see_users')}}">
         View applicants
         </a>
       </div>
     </div>
+    <br>
+
+
     <h3>To establish a scholarship, click on the button below.</h3>
-    <div class="button_list">
+    <!--<div class="button_list">-->
       <div class="buttons">
         <a class="btn btn-success" href="{{=URL('default', 'add_scholarship')}}">
         Establish scholarship
         </a>
       </div>
-    </div>
+    <br>
+    <!--</div>-->
+    <!--</p>-->
+
+    <p class="center">
     <div class = "established-scholarhips">
     <h3>To view established scholarships, click on the button below.</h3>
     <div class="buttons">
       <a class="btn btn-info" href="{{=URL('default', 'view_scholarships')}}">
       View scholarships
       </a>
+      <br>
     </div>
-    <h3>To log out, click on the button below.</h3>
-    <div class="buttons">
-      <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
+    </p>
+
+
+    <p class="center">
+        <h3>To log out, click on the button below.</h3>
+        <div class="buttons">
+        <a class="btn btn-danger" href="{{=URL('default', 'user/logout')}}">
         Log Out
-      </a>
+        </a>
+        </div>
+        <br>
+    </p>
     </div>
-    </div>
-    {{else:}}
+
+    <!---->
+<!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+
+  {{else:}}
+
   <div class="add_btn">
     <a class="btn btn-primary" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i> Add your Information</a>
   </div>
@@ -183,8 +212,45 @@
       }
       .clearfix {
           overflow: auto;
-        }
+      }
+      .footer {
+        clear:both;
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+      }
+
+      .left-sidebar{
+        height: 100%;
+        background-color: white;
+        width: 50px;
+        margin-top: -80px;
+        margin-bottom: -80px;
+        float: left;
+        clear: both;
+      }
+      .right-sidebar{
+        height: 100%;
+        background-color: white;
+        width: 50px;
+        margin-top: -80px;
+        margin-bottom: -80px;
+        float: right;
+      }
+      .ml-0 {
+         margin-left: 99% !important;
+      }
+      .centerbox {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
       </style>
+
       <div class ="home-images" style="max-width:100%">
         <div class="container clearfix">
           <img class="image" alt="Philanthropy" src="../static/images/Penelope.jpg" style="width:100%"/>
@@ -212,7 +278,8 @@
       </div>
 
   </div>
- </div>
+ <!--</div>-->
+
  <script>
   var myIndex = 0;
   carousel();
@@ -275,6 +342,11 @@
   {{pass}}
 
 </div>
+
+</body>
+
+<body>
+<div class="footer" class="teal" style="height:50px; margin-top: 230px;">
 <footer class="teal" style="height:50px; margin-top: 230px;">
   <div class="teal center padded social">
 
@@ -283,4 +355,7 @@
 
   </div>
 </footer>
+
+</div>
+</body>
 </html>
